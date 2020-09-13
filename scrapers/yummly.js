@@ -124,7 +124,7 @@ const yummy = url => {
           resolve(Recipe);
         }
       } catch (error) {
-        reject(new Error("No recipe found on page"));
+        reject(new Error("No recipe found on page :" + error));
       }
     }
   });
