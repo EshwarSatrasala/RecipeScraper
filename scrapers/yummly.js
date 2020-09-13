@@ -93,6 +93,8 @@ const yummy = url => {
         const Recipe = new RecipeSchema();
         const $ = cheerio.load(html);
 
+        console.log("full html is :" + $());
+
         Recipe.image = $("meta[property='og:image']").attr("content");
         Recipe.name = $(".recipe-title").text();
         console.log("Recipe.name is :" + Recipe.name);
