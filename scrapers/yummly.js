@@ -27,6 +27,7 @@ const skippedResources = [
   "google-analytics",
   "googletagmanager",
   "google",
+  "fontawesome",
   "facebook",
   "analytics",
   "optimizely",
@@ -90,13 +91,11 @@ const yummy = url => {
     } else {
       try {
         const html = await customPuppeteerFetch(url);
-        console.log("full html is :" + html);
         const Recipe = new RecipeSchema();
         const $ = cheerio.load(html);
 
         Recipe.image = $("meta[property='og:image']").attr("content");
         Recipe.name = $(".recipe-title").text();
-        console.log("Recipe.name is :" + Recipe.name);
 
         $(".IngredientLine").each((i, el) => {
           Recipe.ingredients.push($(el).text());
@@ -125,7 +124,7 @@ const yummy = url => {
           resolve(Recipe);
         }
       } catch (error) {
-        reject(new Error("No recipe found on page:" + error));
+        reject(new Error("No recipe found on page"));
       }
     }
   });
