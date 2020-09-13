@@ -27,7 +27,6 @@ const skippedResources = [
   "google-analytics",
   "googletagmanager",
   "google",
-  "fontawesome",
   "facebook",
   "analytics",
   "optimizely",
@@ -96,6 +95,7 @@ const yummy = url => {
 
         Recipe.image = $("meta[property='og:image']").attr("content");
         Recipe.name = $(".recipe-title").text();
+        console.log("Recipe.name is :" + Recipe.name);
 
         $(".IngredientLine").each((i, el) => {
           Recipe.ingredients.push($(el).text());
