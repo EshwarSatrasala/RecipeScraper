@@ -1,6 +1,11 @@
 function Recipe() {
   this.name = "";
   this.ingredients = [];
+  this.ingrs = [{
+    quantity: "",
+    ingrednt: "",
+    unit: ""
+  }]
   this.instructions = [];
   this.time = {
     prep: "",
