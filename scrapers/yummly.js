@@ -1,6 +1,8 @@
 const cheerio = require("cheerio");
 const puppeteer = require("puppeteer");
-var parse = require('recipe-ingredient-parser-v2')
+var parser = require('ingredients-parser');
+
+console.log(_.toUpper('Hello, world !'))
 
 const RecipeSchema = require("../helpers/recipe-schema");
 
@@ -100,7 +102,7 @@ const yummy = url => {
 
         $(".IngredientLine").each((i, el) => {
           var ingredientFullText = $(el).text();
-          var parsedObject = parse(ingredientFullText);
+          var parsedObject = parser.parse(ingredientFullText);
           console.log("Ingredient is :" + parsedObject);
           Recipe.ingredients.push($(el).text());
         });
