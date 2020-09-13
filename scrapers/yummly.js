@@ -1,6 +1,6 @@
 const cheerio = require("cheerio");
 const puppeteer = require("puppeteer");
-import { parse } from 'recipe-ingredient-parser-v2';
+var parse = require('recipe-ingredient-parser-v2')
 
 const RecipeSchema = require("../helpers/recipe-schema");
 
