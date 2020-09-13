@@ -90,10 +90,9 @@ const yummy = url => {
     } else {
       try {
         const html = await customPuppeteerFetch(url);
+        console.log("full html is :" + html);
         const Recipe = new RecipeSchema();
         const $ = cheerio.load(html);
-
-        console.log("full html is :" + $());
 
         Recipe.image = $("meta[property='og:image']").attr("content");
         Recipe.name = $(".recipe-title").text();
