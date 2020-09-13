@@ -1,9 +1,6 @@
 const cheerio = require("cheerio");
 const puppeteer = require("puppeteer");
 var parser = require('ingredients-parser');
-
-console.log(_.toUpper('Hello, world !'))
-
 const RecipeSchema = require("../helpers/recipe-schema");
 
 const blockedResourceTypes = [
