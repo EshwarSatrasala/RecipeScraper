@@ -65,9 +65,10 @@ module.exports = recipeScraper;
 
 
 app.get('/parseRecipeOnCloud/:url', async function (req, res, next) {
-  recipeScraper('https://www.allrecipes.com/recipe/21033/korean-bbq-chicken-marinade/')
+  recipeScraper()
     .then(recipe => {
       console.log(recipe);
+      res.status(200).send(recipe);
     });
 });
 
