@@ -64,8 +64,9 @@ const recipeScraper = url => {
 module.exports = recipeScraper;
 
 
-app.get('/parseRecipeOnCloud/:url', async function (req, res, next) {
-  recipeScraper()
+app.get('/parseRecipeOnCloud', async function (req, res, next) {
+  var url = req.query.url
+  recipeScraper(url)
     .then(recipe => {
       console.log(recipe);
       res.status(200).send(recipe);
