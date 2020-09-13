@@ -100,7 +100,8 @@ const yummy = url => {
         $(".IngredientLine").each((i, el) => {
           var ingredientFullText = $(el).text();
           var parsedObject = parser.parse(ingredientFullText);
-          console.log("Ingredient is :" + parsedObject);
+          console.log("IngredientFullText is :" + ingredientFullText);
+          console.log("Amount is :" + parsedObject.amount + ", Unit is :" + parsedObject.unit + ", Ingredient is :" + parsedObject.ingredient);
           Recipe.ingredients.push($(el).text());
         });
 
